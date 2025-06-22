@@ -86,7 +86,7 @@ param
 ##================================================
 ## MARK: Variables
 ##================================================
-
+## TODO Variables: Application
 $adtSession = @{
     # App variables.
     AppVendor = ''
@@ -114,7 +114,7 @@ $adtSession = @{
 function Install-ADTDeployment
 {
     ##================================================
-    ## MARK: Pre-Install
+    ## TODO MARK: Pre-Install
     ##================================================
     $adtSession.InstallPhase = "Pre-$($adtSession.DeploymentType)"
 
@@ -124,11 +124,11 @@ function Install-ADTDeployment
     ## Show Progress Message (with the default message).
     Show-ADTInstallationProgress
 
-    ## <Perform Pre-Installation tasks here>
+    ## TODO <Perform Pre-Installation tasks here>
 
 
     ##================================================
-    ## MARK: Install
+    ## TODO MARK: Install
     ##================================================
     $adtSession.InstallPhase = $adtSession.DeploymentType
 
@@ -147,18 +147,18 @@ function Install-ADTDeployment
         }
     }
 
-    ## <Perform Installation tasks here>
+    ## TODO <Perform Installation tasks here>
 
 
     ##================================================
-    ## MARK: Post-Install
+    ## TODO MARK: Post-Install
     ##================================================
     $adtSession.InstallPhase = "Post-$($adtSession.DeploymentType)"
 
-    ## <Perform Post-Installation tasks here>
+    ## TODO <Perform Post-Installation tasks here>
 
 
-    ## Display a message at the end of the install.
+    ## TODO Display a message at the end of the install.
     if (!$adtSession.UseDefaultMsi)
     {
         Show-ADTInstallationPrompt -Message 'You can customize text to appear at the end of an install or remove it completely for unattended installations.' -ButtonRightText 'OK' -Icon Information -NoWait
@@ -168,21 +168,21 @@ function Install-ADTDeployment
 function Uninstall-ADTDeployment
 {
     ##================================================
-    ## MARK: Pre-Uninstall
+    ## TODO MARK: Pre-Uninstall
     ##================================================
     $adtSession.InstallPhase = "Pre-$($adtSession.DeploymentType)"
 
-    ## Show Welcome Message, close Internet Explorer with a 60 second countdown before automatically closing.
+    ## TODO Show Welcome Message, close Internet Explorer with a 60 second countdown before automatically closing.
     Show-ADTInstallationWelcome -CloseProcesses iexplore -CloseProcessesCountdown 60
 
-    ## Show Progress Message (with the default message).
+    ## TODO Show Progress Message (with the default message).
     Show-ADTInstallationProgress
 
-    ## <Perform Pre-Uninstallation tasks here>
+    ## TODO <Perform Pre-Uninstallation tasks here>
 
 
     ##================================================
-    ## MARK: Uninstall
+    ## TODO MARK: Uninstall
     ##================================================
     $adtSession.InstallPhase = $adtSession.DeploymentType
 
@@ -197,11 +197,11 @@ function Uninstall-ADTDeployment
         Start-ADTMsiProcess @ExecuteDefaultMSISplat
     }
 
-    ## <Perform Uninstallation tasks here>
+    ## TODO <Perform Uninstallation tasks here>
 
 
     ##================================================
-    ## MARK: Post-Uninstallation
+    ## TODO MARK: Post-Uninstallation
     ##================================================
     $adtSession.InstallPhase = "Post-$($adtSession.DeploymentType)"
 
@@ -211,21 +211,21 @@ function Uninstall-ADTDeployment
 function Repair-ADTDeployment
 {
     ##================================================
-    ## MARK: Pre-Repair
+    ## TODO MARK: Pre-Repair
     ##================================================
     $adtSession.InstallPhase = "Pre-$($adtSession.DeploymentType)"
 
-    ## Show Welcome Message, close Internet Explorer with a 60 second countdown before automatically closing.
+    ## TODO Show Welcome Message, close Internet Explorer with a 60 second countdown before automatically closing.
     Show-ADTInstallationWelcome -CloseProcesses iexplore -CloseProcessesCountdown 60
 
-    ## Show Progress Message (with the default message).
+    ## TODO Show Progress Message (with the default message).
     Show-ADTInstallationProgress
 
-    ## <Perform Pre-Repair tasks here>
+    ## TODO <Perform Pre-Repair tasks here>
 
 
     ##================================================
-    ## MARK: Repair
+    ## TODO MARK: Repair
     ##================================================
     $adtSession.InstallPhase = $adtSession.DeploymentType
 
@@ -240,20 +240,20 @@ function Repair-ADTDeployment
         Start-ADTMsiProcess @ExecuteDefaultMSISplat
     }
 
-    ## <Perform Repair tasks here>
+    ## TODO <Perform Repair tasks here>
 
 
     ##================================================
-    ## MARK: Post-Repair
+    ## TODO MARK: Post-Repair
     ##================================================
     $adtSession.InstallPhase = "Post-$($adtSession.DeploymentType)"
 
-    ## <Perform Post-Repair tasks here>
+    ## TODO <Perform Post-Repair tasks here>
 }
 
 
 ##================================================
-## MARK: Initialization
+## TODO MARK: Initialization
 ##================================================
 
 # Set strict error handling across entire operation.
@@ -293,7 +293,7 @@ catch
 
 
 ##================================================
-## MARK: Invocation
+## TODO MARK: Invocation
 ##================================================
 
 try
